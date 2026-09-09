@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Task Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Kanban <span>Board</span></h1>
+        <p>Drag cards between lists to track your progress.</p>
+    </header>
+
+    <main class="board" id="board">
+
+        <!-- Inline "add list" slot, always sits at the end of the board -->
+        <div class="list add-list" id="addListSlot">
+            <button type="button" id="addListBtn">+ Add a list</button>
+            <div class="add-list-form" id="addListForm" hidden>
+                <input type="text" id="newListTitle" placeholder="Enter list title..." maxlength="40">
+                <div class="add-list-actions">
+                    <button type="button" class="btn-blue" id="createListBtn">Add list</button>
+                    <button type="button" class="btn-icon" id="cancelListBtn" title="Cancel">&times;</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal for adding a new task -->
+    <div class="modal" id="taskModal">
+        <div class="modal-box">
+            <h2>Add new task</h2>
+            <input type="text" id="taskTitle" placeholder="Task title" maxlength="60">
+            <textarea id="taskDesc" placeholder="Description (optional)"></textarea>
+            <div class="modal-buttons">
+                <button type="button" class="btn-gray" id="cancelTaskBtn">Cancel</button>
+                <button type="button" class="btn-blue" id="saveTaskBtn">Add task</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
